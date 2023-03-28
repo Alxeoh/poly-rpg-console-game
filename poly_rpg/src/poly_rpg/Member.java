@@ -39,4 +39,8 @@ class Member {
 	public void setParty(boolean party) {
 		this.party = party;
 	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
 }

@@ -4,7 +4,7 @@ class User {
 	private String name;
 	private String id;
 	private String pw;
-	
+	private int gold;
 	public User(String name, String id, String pw) {
 		this.name = name;
 		this.id = id;
@@ -19,6 +19,12 @@ class User {
 	}
 	public String getPw() {
 		return this.pw;
+	}
+	public int getGold() {
+		return this.gold;
+	}
+	public void set(int gold) {
+		this.gold = gold;
 	}
 	
 }

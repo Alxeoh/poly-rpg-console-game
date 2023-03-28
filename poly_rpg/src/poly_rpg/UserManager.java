@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 class UserManager {
 	
-	ArrayList<User> list = new ArrayList<>();
+	static ArrayList<User> list = new ArrayList<>();
 	private String log = "logOut";
 	private UserManager() {
 		
@@ -90,6 +90,7 @@ class UserManager {
 				if(list.get(indexOf(id)).getPw().equals(pw)){
 					System.out.printf("%s님 환영합니다.\n", list.get(indexOf(id)).getName());
 					this.log = id;
+					Player.userName = list.get(indexOf(log)).getName();
 				} else {
 					System.out.println("패스워드를 다시 확인하세요.");
 				}
@@ -107,6 +108,9 @@ class UserManager {
 			String pw = GameManager.inputString();
 			if(list.get(indexOf(log)).getPw().equals(pw)) {
 				System.out.println("해당 아이디는 로그아웃 되었습니다.");
+				this.log = "logOut";
+			} else {
+				System.out.println("패스워드를 다시 확인하세요.");
 			}
 		} else {
 			System.out.println("로그인 상태가 아닙니다.");
@@ -125,5 +129,4 @@ class UserManager {
 			System.out.printf("id : %s/ pw : %s / name: %s \n",list.get(i).getId(),list.get(i).getPw(),list.get(i).getName());
 		}
 	}
-	
 }

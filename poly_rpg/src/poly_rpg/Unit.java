@@ -5,14 +5,12 @@ class Unit {
 	private int hp;
 	private int MaxHp;
 	private int maxPower;
-	private boolean party;
 	
-	public Unit(String name, int hp, int MaxHp, int maxPower, boolean party) {
+	public Unit(String name, int hp, int MaxHp, int maxPower) {
 		this.name = name;
 		this.hp = hp;
 		this.MaxHp = MaxHp;
 		this.maxPower = maxPower;
-		this.party  = true;
 	}
 	public String getName() {
 		return this.name;

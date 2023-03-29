@@ -87,6 +87,16 @@ class GameManager {
 		}
 		System.out.println();
 	}
+	private void printGold() {
+		System.out.println("골드   :" + this.gold +"G");
+		System.out.println();
+	}
+	
+	private void getGold(int gold) {
+		this.gold = gold;
+		System.out.printf("%dG 획득\n", gold);
+	}
+
 
 	private void printMap() {
 		System.out.println("======= Adventure Field ========");
@@ -119,6 +129,7 @@ class GameManager {
 			System.out.println();
 		}
 		printParty();
+		printGold();
 	}
 private void markDeath(String name) {
 	int idxI = -1;
@@ -196,16 +207,11 @@ private void markDeath(String name) {
 		return check;
 	}
 
-	private void getGold(int gold) {
-		this.gold = gold;
-		System.out.printf("%dG 획득\n", gold);
-	}
-
 	public void play() {
 		setMap();
 		while (true) {
 			printMap();
-			System.out.printf("                  w(↑)      \n              a(←)s(↓)d(➞)\n");
+			System.out.printf("                      w(↑)      \n                  a(←)s(↓)d(➞)\n");
 			System.out.print("입력 : ");
 			String dir = inputString();
 			int y = this.member.get(0).getY();
